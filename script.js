@@ -2,6 +2,8 @@ const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
+ctx.fillStyle = "red";
+ctx.lineWidth = 10;
 
 function drawShape(radius, inset, n) {
     ctx.beginPath();//putting pancil on canvas
@@ -19,5 +21,6 @@ function drawShape(radius, inset, n) {
     ctx.restore();// to reset to the global setting after changes
     ctx.closePath();//connect the begin and the end points. if it commented out. the line will not be closed
     ctx.stroke();
+    ctx.fill();
 }
-drawShape(300, 0.7, 10);
+drawShape(150, .1, 50);
