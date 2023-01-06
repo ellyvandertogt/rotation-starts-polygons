@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* to remove the scroll-down element*/
+}
+
+#canvas1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
