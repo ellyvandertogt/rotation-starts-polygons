@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body {
+    overflow: hidden; /* to remove the scroll-down element*/
+}
+
+#canvas1 {
+    background: linear-gradient(120deg, #4a3933, #e6d5b8);
+    position: absolute;
+    top: 0;
+    left: 0;
+}

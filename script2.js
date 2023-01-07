@@ -1,11 +1,11 @@
-//https://www.youtube.com/watch?v=aO1VcJ5WpKI&ab_channel=Frankslaboratory 20.19 minutes
+//https://www.youtube.com/watch?v=aO1VcJ5WpKI&ab_channel=Frankslaboratory 29.00 minutes
 
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
-ctx.strokeStyle = "black";
-ctx.lineWidth = 2;
+ctx.strokeStyle = "#black";
+ctx.lineWidth = 3;
 ctx.shadowOffsetX = 10;
 ctx.shadowOffsetY = 10;
 ctx.shadowBlur = 10;
@@ -16,7 +16,7 @@ let drawing = false;
 
 
 function drawShape(x, y, radius, inset, n) {
-    ctx.fillStyle = "hsl(" + hue + ", 100%, 50%)"; 
+    // ctx.fillStyle = "red"; 
     ctx.beginPath();//putting pancil on canvas
     ctx.save(); // to save all the point of drawing (ctx.moveTo and ctx.lineTo) 
     ctx.translate(x, y);// moving/add the starting points of X and y coordinations
@@ -35,9 +35,10 @@ function drawShape(x, y, radius, inset, n) {
     ctx.fill();
 }
 
-const radius = 70;
-const inset = 0.5;
-const n = 20;
+const radius = 40;
+const inset = 0.4;
+const n = 5;
+drawShape(80, 80, radius * .95, 1, 5);
 drawShape(120, 120, radius, inset, n);
 
 let angle = 0;
@@ -45,10 +46,20 @@ window.addEventListener("mousemove", function(e) { // Why (e)?
     if (drawing) {
         ctx.save();
         ctx.translate(e.x, e.y);
-        ctx.rotate(angle);
-        hue+=3;//Colour spectrum speed 
-        angle+= .5;
-        drawShape(0, 0, radius, inset, n);//above 0, the rotation is outside the (innitial) shape
+
+        ctx.rotate(angle * 3);
+        ctx.fillStyle = "red";
+        drawShape(0, 0, radius * 0.95, 1, 5);
+      
+        ctx.rotate(-angle * 7);// (- , oposite direction) speed-rotate = rotate to oposite derection
+        ctx.fillStyle = "blue";
+        drawShape(radius, radius, radius * 0.35, 1, 7);//above 0, the rotation is outside the (innitial) shape
+
+        ctx.rotate(angle * 4);
+        ctx.fillStyle = "red";
+        drawShape(0, 0, radius * 0.95, 1, 5);
+        
+        angle += 0.05;
         ctx.restore();
     }
 });
