@@ -1,3 +1,5 @@
+//https://www.youtube.com/watch?v=aO1VcJ5WpKI&ab_channel=Frankslaboratory
+
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
@@ -23,4 +25,4 @@ function drawShape(radius, inset, n) {
     ctx.stroke();
     ctx.fill();
 }
-drawShape(150, .1, 50);
+drawShape(150, 0.5, 50);
